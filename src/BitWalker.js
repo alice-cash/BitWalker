@@ -214,7 +214,7 @@ function BitWalker(ByteArrayLength) {
     */
     BitWalker.prototype.WalkPut = function (Value) {
         if (StridePos > BitLength) return;
-        this.SetBits(StridePos, Value, StrideWidth);
+        this.SetBits(StridePos, StrideWidth, Value);
         StridePos += Stride;
     }
 
@@ -225,7 +225,7 @@ function BitWalker(ByteArrayLength) {
     */
     BitWalker.prototype.StandPut = function (Value) {
         if (StridePos > BitLength) return;
-        this.SetBits(StridePos, Value, StrideWidth);
+        this.SetBits(StridePos, StrideWidth, Value);
     }
 
     /**
@@ -329,7 +329,7 @@ function BitWalker(ByteArrayLength) {
     * @param {number} Value Value to set.
     * @param {number} Width Width of data to set.
     */
-    BitWalker.prototype.SetBits = function (Position, Value, Width) {
+    BitWalker.prototype.SetBits = function (Position, Width, Value) {
         Position = Number(Position);
         Value = Number(Value);
         Width = Number(Width) || 8;

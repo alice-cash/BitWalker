@@ -11,7 +11,7 @@ what parseInt() will support.
 </p>
 
 #Why?
-What is the purpose of this class? What does it do? Normally bit access in JavaScript is somewhat limited. Allnumbers are treated as 64 bit numbers however Bitwise operationsactually only work on the first 32 bits. There is no direct wayto only have a single 8 bit value. Javascript does provide Uint8Array() however this is still somewhat limited in what canbe performed. It does emulate Byte values as any data after the first 8 bits is dropped when writing to it.
+What is the purpose of this class? What does it do? Normally bit access in JavaScript is somewhat limited. All numbers are treated as 64 bit numbers however Bitwise operationsactually only work on the first 32 bits. With this there is no direct way to only have a single 8 bit value. Javascript does provide Uint8Array() however this is still somewhat limited in what can be performed or how it can be accessed. It does emulate Byte values as any data after the first 8 bits is dropped when seting data.
 
 I was actually looking for a somewhat more robust Radix conversion than what parseInt() provides. The primary limitations with this is that if you give parseInt a value such as 0x0044 it will only show the "68" and hides the fact that there are almost 26 bits of data missing. In most cases we may not care about the remaining data however I infact did care. Dammit. 
 
